@@ -7,8 +7,12 @@ public class MazeSolver {
     public MazeSolver(char[][] maze) {
         this.maze = maze;
         entrancePoint = findEntrance();
+        if (entrancePoint == -1){
+            System.err.println("no entrance point. terminating.");
+            System.exit(1);
+        }
     }
-    
+
     public void solve() {
         if (!solve(maze, entrancePoint, 0))
             System.out.println("Unsolvable maze");
