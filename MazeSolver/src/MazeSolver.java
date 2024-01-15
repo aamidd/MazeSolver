@@ -77,6 +77,6 @@ public class MazeSolver {
     }
 
     private boolean isExt(int y, int x) {
-        return !(y == entrancePoint && x == 0) && (x == 0 || x == maze[0].length - 1 || y == 0 || y == maze.length - 1);
+        return !(y == entrancePoint && x == 0) && (x == 0 || x == maze[y].length - 1 || y == 0 || y == maze.length - 1);
     }
 }
