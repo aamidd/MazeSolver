@@ -19,9 +19,6 @@ public class MazeSolver {
     }
 
     private boolean solve(char[][] maze, int y, int x) {
-        if (maze[y][x] == '#') {
-            return false;
-        }
         maze[y][x] = 'x';
         if (isExt(y, x)) {
             return true;
