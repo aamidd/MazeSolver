@@ -13,7 +13,7 @@ public class MazeGenerator {
         int randomEntrance = random.nextInt(10) + 1;
         int randomExit = random.nextInt(10) + 1;
         for (int i = 0; i < 12; i++) {
-            if (i == 0 | i == 11) {
+            if (i == 0 || i == 11) {
                 for (int j = 0; j < 12; j++) {
                     maze[i][j] = '#';
                 }
