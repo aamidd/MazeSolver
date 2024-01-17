@@ -13,23 +13,21 @@ public class MazeGenerator {
         int randomEntrance = random.nextInt(10) + 1;
         int randomExit = random.nextInt(10) + 1;
         for (int i = 0; i < 12; i++) {
+            maze[i][0] = '#';
+            maze[i][11] = '#';
             if (i == 0 || i == 11) {
-                for (int j = 0; j < 12; j++) {
+                for (int j = 1; j < 11; j++) {
                     maze[i][j] = '#';
                 }
             } else {
                 if (i == randomEntrance) {
                     maze[i][0] = '.';
-                } else {
-                    maze[i][0] = '#';
                 }
                 if (i == randomExit) {
                     maze[i][11] = '.';
-                } else {
-                    maze[i][11] = '#';
                 }
                 for (int j = 1; j < 11; j++) {
-                    maze[i][j] = random.nextInt(2) == 0 && j != 1 ? '#' : '.';
+                    maze[i][j] = random.nextInt(2) == 0 && j != 1 && j != 10 ? '#' : '.';
                 }
             }
         }
